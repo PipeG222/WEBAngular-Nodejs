@@ -1,0 +1,45 @@
+<!-- Formulario.component.html -->
+<div class="container">
+  <header>
+    <h1>Tu Reseña</h1>
+  </header>
+  <main>
+    <form #ResenaForm="ngForm">
+      <div class="form-group">
+        <label for="OpRestaurante">Dame tu opinion acerca del restaurante</label>
+        <input type="text" class="form-control" id="OpRestaurante" name="OpRestaurante" [(ngModel)]="nuevaResena.OpRestaurante" required>
+      </div>
+      <div class="form-group">
+        <label for="OpComida">Dame tu opinicion acerca de la comida</label>
+        <input type="text" class="form-control" id="OpComida" name="OpComida" [(ngModel)]="nuevaResena.OpComida" required>
+      </div>
+      <div class="form-group">
+        <label for="CalificacionR">Calificanos que te parecio tu experiencia de 1 a 10</label>
+        <input type="number" class="form-control" id="CalificacionR" name="CalificacionR" [(ngModel)]="nuevaResena.CalificacionR" required>
+      </div>
+      <div class="form-group">
+        <label for="CalificacionC">Califica el sabor de nuestra comida de 1 a 10</label>
+        <input type="number" class="form-control" id="CalificacionC" name="CalificacionC" [(ngModel)]="nuevaResena.CalificacionC" required>
+      </div>
+      <div class="form-group">
+        <label for="Recomendacion">Danos una recomendacion para que podamos mejorar</label>
+        <input type="text" class="form-control" id="Recomendacion" name="Recomendacion" [(ngModel)]="nuevaResena.Recomendacion" required>
+      </div>
+      <div class="form-group">
+        <label for="cantidad">Cual es la calificacion que le das a nuestra atencion de 1 a 10</label>
+        <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="nuevaResena.cantidad" required>
+      </div>
+      <div class="col-12 text-center mt-4">
+        <button type="button" class="btn btn-primary" (click)="enviarResena()" style="background-color: #007bff; border-color: #007bff;">
+          Realizar Reseña
+        </button>
+        <div class="col-12 text-center mt-4">
+        </div><div class="col-12 text-center mt-4">
+        </div>
+      </div>
+      
+    </form>
+  </main>
+  <app-listar-Resenas></app-listar-Resenas>
+</div>
+    

@@ -1,0 +1,44 @@
+<style>
+    .custom-box {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        display: flex; 
+        flex-direction: column; 
+        height: 100%; 
+    }
+
+    .custom-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .custom-box img {
+        width: 100%;
+        height: auto;
+        flex: 1; 
+    }
+
+    .btn-top {
+        width: 100%;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1>Delicias Gourmet</h1>
+            <h1 style="font-family: Arial, sans-serif; font-weight: bold; color: #000000;">¿Quieres calificar nuestro restaurante?</h1>
+        </div>
+        <div class="col-md-6-center"> 
+            <div class="custom-box">
+                <a [routerLink]="['/Formulario']" class="btn btn-primary btn-lg btn-block btn-top">Responde aquí</a>
+                <img src="assets/restaurante.webp" alt="Vidrio">
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,69 @@
+<style>
+    .custom-box {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .custom-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.836);
+    }
+
+    .custom-box img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+<div class="container-fluid" style="background-color: #ffffff; height: 100vh;">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100%;">
+        <div class="row">
+            <div class="col-12 text-center mb-4">
+                <h1 style="font-family: Arial, sans-serif; font-weight: bold; color: #000000;">Para calificarnos debes crear un usuario</h1>
+            </div>
+            <div class="col-12 text-center mb-4">
+                <h2 style="color: #007bff;">Regístrate</h2>
+            </div>
+
+            <!-- Nombre -->
+            <div class="col-6 d-flex align-items-center form-group">
+                <label for="inputNombre" class="mb-0 mr-2" style="color: #000000;">Nombre</label>
+                <input type="text" id="inputNombre" [(ngModel)]="nombre" placeholder="Nombre" class="form-control">
+            </div>
+
+            <!-- Apellidos -->
+            <div class="col-6 d-flex align-items-center form-group">
+                <label for="inputApellidos" class="mb-0 mr-2" style="color: #000000;">Apellidos</label>
+                <input type="text" id="inputApellidos" [(ngModel)]="apellidos" placeholder="Apellidos" class="form-control">
+            </div>
+
+            <!-- Correo Electrónico -->
+            <div class="col-6 d-flex align-items-center mt-3 form-group">
+                <label for="inputCorreo" class="mb-0 mr-2" style="color: #000000;">Correo Electrónico</label>
+                <input type="email" id="inputCorreo" [(ngModel)]="correo" placeholder="nombre@gmail.com" class="form-control">
+            </div>
+
+            <!-- Celular -->
+            <div class="col-6 d-flex align-items-center mt-3 form-group">
+                <label for="inputCelular" class="mb-0 mr-2" style="color: #000000;">Celular</label>
+                <input type="text" id="inputCelular" [(ngModel)]="celular" placeholder="Celular" class="form-control">
+            </div>
+
+            <!-- Contraseña -->
+            <div class="col-6 d-flex align-items-center mt-3 form-group">
+                <label for="inputPassword" class="mb-0 mr-2" style="color: #000000;">Contraseña</label>
+                <input type="password" id="inputPassword" [(ngModel)]="password" placeholder="Contraseña" class="form-control">
+            </div>
+
+            <!-- Botón de Inicio de Sesión -->
+            <div class="col-12 text-center mt-4">
+                <button [routerLink]="['/registro']" class="btn btn-primary" (click)="validarCredencialesUsuario()" style="background-color: #007bff; border-color: #007bff;">
+                    Crear Usuario
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    

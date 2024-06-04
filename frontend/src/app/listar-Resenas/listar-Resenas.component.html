@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Resenas</title>
+  <style>
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .styled-table th, .styled-table td {
+      padding: 12px 15px;
+    }
+
+    .styled-table thead tr {
+      background-color: #008698;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    .styled-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+      border-bottom: 2px solid #007bff;
+    }
+
+    .styled-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Listado de Resenas</h2>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Opinion Restaurante</th>
+        <th>Opinion Comida</th>
+        <th>Calificación Restaurante</th>
+        <th>Calificación Comida</th>
+        <th>Recomendación</th>
+        <th>Calificación Atención</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let resena of listadoResenas">
+        <td *ngIf="!resena.editMode">{{ resena.OpRestaurante }}</td>
+        <td *ngIf="resena.editMode"><input [(ngModel)]="resena.OpRestaurante"></td>
+        <td *ngIf="!resena.editMode">{{ resena.OpComida }}</td>
+        <td *ngIf="resena.editMode"><input [(ngModel)]="resena.OpComida"></td>
+        <td *ngIf="!resena.editMode">{{ resena.CalificacionR }}</td>
+        <td *ngIf="resena.editMode"><input [(ngModel)]="resena.CalificacionR"></td>
+        <td *ngIf="!resena.editMode">{{ resena.CalificacionC }}</td>
+        <td *ngIf="resena.editMode"><input [(ngModel)]="resena.CalificacionC"></td>
+        <td *ngIf="!resena.editMode">{{ resena.Recomendacion }}</td>
+        <td *ngIf="resena.editMode"><input [(ngModel)]="resena.Recomendacion"></td>
+        <td *ngIf="!resena.editMode">{{ resena.cantidad }}</td>
+        <td *ngIf="resena.editMode"><input [(ngModel)]="resena.cantidad"></td>
+        <td *ngIf="!resena.editMode"><button type="button" class="btn btn-primary" (click)="activarEdicion(resena)" style="background-color: #007bff; border-color: #007bff;">
+          Editar 
+        </button></td>
+        <td *ngIf="resena.editMode"><button type="button" class="btn btn-primary" (click)="actualizaResena(resena)" style="background-color: #007bff; border-color: #007bff;">
+          Actualizar 
+        </button></td>
+        <td><button type="button" class="btn btn-primary" (click)="eliminarResena(resena._id)" style="background-color: #007bff; border-color: #007bff;">
+          Borrar
+        </button></td>
+
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+ 
